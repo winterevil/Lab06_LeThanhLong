@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsing numbers</title>
+
+    <script>
+        function calc() {
+            let p0 = document.getElementById('p0').innerText;
+            document.getElementById('p01').innerHTML = parseInt(p0);
+            document.getElementById('p02').innerHTML = parseFloat(p0);
+            document.getElementById('p03').innerHTML = Number(p0);
+            document.getElementById('p04').innerHTML = +p0;
+            document.getElementById('p05').innerHTML = p0^0;
+        
+            let p1 = document.getElementById('p1').innerText;
+            document.getElementById('p11').innerHTML = parseInt(p1);
+            document.getElementById('p12').innerHTML = parseFloat(p1);
+            document.getElementById('p13').innerHTML = Number(p1);
+            document.getElementById('p14').innerHTML = +p1;
+            document.getElementById('p15').innerHTML = p1^0;
+
+            let p2 = document.getElementById('p2').innerText;
+            document.getElementById('p21').innerHTML = parseInt(p2);
+            document.getElementById('p22').innerHTML = parseFloat(p2);
+            document.getElementById('p23').innerHTML = Number(p2);
+            document.getElementById('p24').innerHTML = +p2;
+            document.getElementById('p25').innerHTML = p2^0;
+
+            let p3 = document.getElementById('p3').innerText;
+            document.getElementById('p31').innerHTML = parseInt(p3);
+            document.getElementById('p32').innerHTML = parseFloat(p3);
+            document.getElementById('p33').innerHTML = Number(p3);
+            document.getElementById('p34').innerHTML = +p3;
+            document.getElementById('p35').innerHTML = p3^0;
+
+            let p4 = document.getElementById('p4').innerText;
+            document.getElementById('p41').innerHTML = parseInt(p4);
+            document.getElementById('p42').innerHTML = parseFloat(p4);
+            document.getElementById('p43').innerHTML = Number(p4);
+            document.getElementById('p44').innerHTML = +p4;
+            document.getElementById('p45').innerHTML = p4^0;
+
+            let p5 = document.getElementById('p5').innerText;
+            document.getElementById('p51').innerHTML = parseInt(p5);
+            document.getElementById('p52').innerHTML = parseFloat(p5);
+            document.getElementById('p53').innerHTML = Number(p5);
+            document.getElementById('p54').innerHTML = +p5;
+            document.getElementById('p55').innerHTML = p5^0;
+        }
+    </script>
+</head>
+
+<body>
+    <table border="1px" cellspacing="0">
+        <tr>
+            <th>str</th>
+            <th>parseInt(str)</th>
+            <th>parseFloat(str)</th>
+            <th>Number(str)</th>
+            <th>+str</th>
+            <th>str|0</th>
+        </tr>
+        <tr>
+            <td id="p0">1234</td>
+            <td id="p01">?</td>
+            <td id="p02">?</td>
+            <td id="p03">?</td>
+            <td id="p04">?</td>
+            <td id="p05">?</td>
+        </tr>
+        <tr>
+            <td id="p1">1234abc</td>
+            <td id="p11">?</td>
+            <td id="p12">?</td>
+            <td id="p13">?</td>
+            <td id="p14">?</td>
+            <td id="p15">?</td>
+        </tr>
+        <tr>
+            <td id="p2">0.15</td>
+            <td id="p21">?</td>
+            <td id="p22">?</td>
+            <td id="p23">?</td>
+            <td id="p24">?</td>
+            <td id="p25">?</td>
+        </tr>
+        <tr>
+            <td id="p3">3.14ivan</td>
+            <td id="p31">?</td>
+            <td id="p32">?</td>
+            <td id="p33">?</td>
+            <td id="p34">?</td>
+            <td id="p35">?</td>
+        </tr>
+        <tr>
+            <td id="p4">Infinity</td>
+            <td id="p41">?</td>
+            <td id="p42">?</td>
+            <td id="p43">?</td>
+            <td id="p44">?</td>
+            <td id="p45">?</td>
+        </tr>
+        <tr>
+            <td id="p5">99999999999999999999</td>
+            <td id="p51">?</td>
+            <td id="p52">?</td>
+            <td id="p53">?</td>
+            <td id="p54">?</td>
+            <td id="p55">?</td>
+        </tr>
+    </table>
+    <button type="button" id="calc" onclick="calc()">Calculate</button>
+</body>
+
+</html>

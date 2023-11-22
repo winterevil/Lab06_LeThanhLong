@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <script>
+        let product = [
+            {
+                "id": 1,
+                "name": "Laptop",
+                "quantity": 5,
+                "price": 1200,
+                "image": "laptop_image.jpg"
+            },
+            {
+                "id": 2,
+                "name": "Phone",
+                "quantity": 10,
+                "price": 800,
+                "image": "phone_image.jpg"
+            },
+            {
+                "id": 3,
+                "name": "Tablet",
+                "quantity": 8,
+                "price": 500,
+                "image": "tablet_image.jpg"
+            }
+        ];
+        console.log("Initial Products:");
+        console.log(product);
+
+        function def(a, b) {
+            let x = a.name.toLowerCase();
+            let y = b.name.toLowerCase();
+            if (x < y) { return -1; }
+            if (x > y) { return 1; }
+            return 0;
+        }
+
+        function myFunction() {
+            product.sort(def);
+            console.log(product);
+        }
+
+        function add() {
+            let headProduct = {
+                "id": 4,
+                "name": "Smartwatch",
+                "quantity": 15,
+                "price": 200,
+                "image": "watch_image.jpg"
+            };
+            let tailProduct = {
+                "id": 5,
+                "name": "Camera",
+                "quantity": 3,
+                "price": 600,
+                "image": "camera_image.jpg"
+            };
+            product.unshift(headProduct);
+            product.push(tailProduct);
+            console.log("Updated Products:");
+            console.log(product);
+        }
+
+        function search() {
+            let find = document.getElementById('product').value;
+            for (i = 0; i < product.length; i++) {
+                if (find == product[i].name) {
+                    console.log("Search Result:");
+                    console.log(product[i]);
+                }
+            }
+        }
+
+        function remove() {
+            let find = document.getElementById('product').value;
+            for (i = 0; i < product.length; i++) {
+                if (find == product[i].id) {
+                    product.splice(i, 1);
+                    console.log("Updated Products:");
+                    console.log(product);
+                }
+            }
+        }
+
+        function edit() {
+            let find = document.getElementById('product').value;
+            for (i = 0; i < product.length; i++) {
+                if (find == product[i].id) {
+                    product[i].id = document.getElementById('id').value;
+                    product[i].name = document.getElementById('name').value;
+                    product[i].quantity = document.getElementById('quantity').value;
+                    product[i].price = document.getElementById('price').value;
+                    product[i].image = document.getElementById('image').value;
+
+                    console.log("Updated Products:");
+                    console.log(product);
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="text" id="product">
+    <button type="button" onclick="myFunction()">Sort</button>
+    <button type="button" onclick="add()">Add</button>
+    <button type="button" onclick="search()">Search</button>
+    <button type="button" onclick="remove()">Remove</button>
+    <button type="button" onclick="edit()">Edit</button>
+    <p>
+        <input type="text" id="id">
+        <input type="text" id="name">
+        <input type="text" id="quantity">
+        <input type="text" id="price">
+        <input type="text" id="image">
+    </p>
+</body>
+
+</html>

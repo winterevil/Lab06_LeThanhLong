@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime check</title>
+    <script>
+        function checkPrime() {
+            let num = document.getElementById('number').value;
+            let result = '';
+            let count = 0;
+
+            if (!num || num < 1) {
+                result = 'Please enter a valid positive integer.';
+            } else {
+                for (i = 1; i < num; i++) {
+                    if (num % i == 0) {
+                        count++;
+                        if (count == 2) {
+                            break;
+                        }
+                    }
+                }
+                if (count != 1) {
+                    result = 'false';
+                } else {
+                    result = 'true';
+                }
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="number">
+        <h3>Prime Check</h3>
+        <p>Enter a positive integer N:
+            <input type="text" id="number">
+            <button type="button" id="print" onclick="checkPrime()">Check Prime</button>
+        </p>
+        <p id="result"></p>
+    </div>
+</body>
+
+</html>
